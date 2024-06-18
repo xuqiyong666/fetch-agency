@@ -132,8 +132,8 @@ const broadcastError = (error: Error, key: string) => {
   storeItem.consumers = []
 }
 
-const FetchMan = {
+const FetchAgency = {
   fetch
 }
 
-export default FetchMan
+export default FetchAgency

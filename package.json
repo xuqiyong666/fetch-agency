@@ -1,11 +1,11 @@
 {
-  "name": "fetch-man",
+  "name": "fetch-agency",
   "version": "1.0.0",
-  "description": "一个用于合并相同接口请求的库，通过减少并发请求量减少接口负载压力。",
-  "main": "src/index.ts",
+  "description": "这是一个用于合并相同接口请求的库，通过减少并发请求量达到降低服务端接口负载压力的目的。",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/test.js"
   },
   "keywords": [],
   "author": "xuqiyong666",
@@ -17,8 +17,5 @@
     "@types/node": "^20.14.4",
     "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "dayjs": "^1.11.11"
   }
 }

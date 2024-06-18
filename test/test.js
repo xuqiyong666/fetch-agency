@@ -1,31 +1,28 @@
 
 const dayjs = require('dayjs')
 
-const { FetchMan } = require('../dist/index')
+const FetchAgency = require('../dist/index').default
 
-console.log("FetchMan", FetchMan)
+console.log("FetchAgency", FetchAgency)
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms))
 
 // 模拟一个耗时3秒的接口
-const fetchApiData = async (params) => {
+const fetchApiData = async () => {
   await sleep(3000)
 
   return {
-    params,
-    result: Math.floor(Math.random() * 100000)
+    number: Math.floor(Math.random() * 100000)
   }
 }
 
 const fetchCase = async (index) => {
-  console.log(`[${index}] call fetchCategoryTestData`)
-
-  const apiData = await FetchMan.fetch({
-    key: "apiData?category=test",
+  console.log(`[${index}] before call fetchApiData`)
+  const apiData = await FetchAgency.fetch({
+    key: "apiData",
     execute: () => {
-      const params = { category: "test" }
-      console.log(`[${index}] fetchApiData! ${JSON.stringify(params)}`)
-      return fetchApiData(params)
+      console.log(`[${index}] fetchApiData!`)
+      return fetchApiData()
     },
   })
 
@@ -35,7 +32,6 @@ const fetchCase = async (index) => {
 const main = async () => {
 
   let reqCount = 10
-
   for (let i = 1; i <= reqCount; i++) {
     fetchCase(i)
   }

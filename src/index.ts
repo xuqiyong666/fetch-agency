@@ -1,5 +1,5 @@
-import FetchMan from "./fetch-man"
+import FetchAgency from "./fetch-agency"
 
-export { FetchMan }
+export { FetchAgency }
 
-export default FetchMan
+export default FetchAgency
