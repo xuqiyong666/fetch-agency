@@ -1,0 +1,24 @@
+{
+  "name": "fetch-man",
+  "version": "1.0.0",
+  "description": "一个用于合并相同接口请求的库，通过减少并发请求量减少接口负载压力。",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "xuqiyong666",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.14.4",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  }
+}
